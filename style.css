@@ -8,7 +8,7 @@ body {
 
 .hero {
     height: 25em;
-    background-image: url("./images/hero.svg");
+    background-image: url("./Images/hero.svg");
     background-size: cover;
     display: block;
 }
@@ -29,8 +29,8 @@ body {
     }
 
 .inBetween {
-    background-image: url("./images/middle.svg");
-    height:150px;
+    background-image: url("./Images/middle.svg");
+    height: 150px;
 }
 
 .about {
@@ -57,19 +57,19 @@ body {
     }
 
 .unity {
-    background-image: url("./images/sections/unity.png");
+    background-image: url("./Images/sections/unity.png");
     /*background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(85,85,85,1) 52%, rgba(167,167,167,1) 100%);*/
     z-index: 1;
 }
 
 .cs {
-    background-image: url("./images/sections/cs.png");
+    background-image: url("./Images/sections/cs.png");
     /*background: radial-gradient(circle, rgba(161,121,220,1) 0%, rgba(40,0,104,1) 100%);*/
     z-index: 2;
 }
 
 .vr {
-    background-image: url("./images/sections/xr.png");
+    background-image: url("./Images/sections/xr.png");
     /*    background: linear-gradient(0deg, rgba(240,244,80,1) 35%, rgba(201,57,13,1) 75%);
 */ z-index: 3;
 }

@@ -1,23 +1,27 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
 
 body {
-    background-color: #fbae3c;
-    font-family: 'Roboto', sans-serif;
+    background-color: #0c1c30;
+    font-family: 'Source Code Pro', monospace;
     margin: 0px;
 }
 
+#topBg {
+    width: 100%;
+    height: 200px;
+}
+
 .hero {
-    height: 25em;
-    background-image: url("./Images/hero.svg");
+/*    height: 20em;
+*/    background-color: #0c1c30;
     background-size: cover;
 }
 
-    .hero h1, .hero h2
-    {
+    .hero h1, .hero h2 {
         color: #fbae3c;
         position: relative;
-        top: 100px;
         text-align: center;
         margin: 0px;
     }
@@ -59,26 +63,15 @@ body {
     }
 
 .unity {
-    background-image: url("./Images/sections/unity.png");
+    background-image: url("./Images/sections/unity.svg");
     z-index: 1;
+    background-position: center center;
 }
-
-    .unity:hover {
-        background-image: url("./Images/sections/unity2.png");
-        background-size: contain;
-    }
 
 .cs {
     background-image: url("./Images/sections/cs.png");
     z-index: 2;
 }
-
-    .cs:hover {
-        background-image: url("./Images/sections/cs2.png");
-        background-size:contain;
-    }
-
-
 
 .vr {
     background-image: url("./Images/sections/xr.png");
@@ -88,9 +81,10 @@ body {
 .section {
     position: relative;
     height: 20em;
+    width: 100%;
     background-attachment: fixed;
     box-shadow: 0px -5px 20px;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
     .section h2 {
@@ -109,10 +103,6 @@ body {
         height: 11em;
     }
 
-.section h1, .section h2, .section p {
-    /*margin: 0px;*/
-}
-
 .myWork_img {
     z-index: -1;
     height: 10em;
@@ -123,6 +113,61 @@ body {
     transition: all .2s ease-in-out;
 }
 
+.projects {
+    background-color: #08121f;
+    margin: 0px;
+    padding: 20px;
+}
+
+    .projects h2 {
+        text-align: center;
+        color: #fbae3c;
+        font-size: 2.3em;
+    }
+
+.project {
+    height: 300px;
+    background-color: #0c1c30;
+    margin: 40px 20px 40px 20px;
+    box-shadow: 0px 8px 20px black;
+    position: relative;
+    color:white;
+}
+
+.pj-text {
+    position: absolute;
+    top: 10%;
+    background-color:rgba(0,0,0,0.8);
+    padding:20px;
+}
+
+.left {
+    left: 30px;
+    text-align: left;
+}
+
+.right {
+    right: 30px;
+    text-align: right;
+}
+
+.GetButtonArea {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+#char-poser {
+    background-image: url("https://img.itch.zone/aW1hZ2UvMTMyOTI4OC83NzMwMjgzLnBuZw==/original/humnLU.png");
+    background-position: 50% 50%;
+}
+
+#tilenet {
+    background-image: url("https://play-lh.googleusercontent.com/IkJmPm4l-o1nZbzS40lxwdZACY6kbE9s9z210LDdJa6kHiwgRzc2QuEmV9BJ70OVhgAx=w2560-h1440-rw");
+    background-position: 50% 50%;
+}
+
 .contacts {
     height: 200px;
     padding: 30px 0px 100px 0px;
@@ -131,13 +176,11 @@ body {
     text-align: center;
 }
 
-    .contacts h3
-    {
+    .contacts h2 {
         font-size: 2.3em;
     }
 
-    .contacts a
-    {
+    .contacts a {
         color: #8a416e;
     }
 
@@ -145,7 +188,7 @@ body {
     font-size: 1.5em;
 }
 
-.fa:before {
+.fa-brands:before {
     color: #fbae3c;
     display: inline-block;
     padding: 20px;
@@ -156,9 +199,9 @@ body {
     background: #8a416e;
 }
 
-    .fa:hover {
-        opacity: 0.7;
-    }
+.fa-brands:hover {
+    opacity: 0.7;
+}
 
 @media screen and (max-device-width: 480px), (max-width: 750px) {
     .section h2 {

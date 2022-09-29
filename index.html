@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <canvas id="threeCanvas"></canvas>
     <canvas id="topBg">
-
     </canvas>
     <div class="hero">
         <h1>Tommaso Frazzano</h1>
@@ -26,7 +27,9 @@
         <h2>
             I mainly use the Unity engine to make softwares like 3D configurators, educational games and mobile applications
         </h2>
-        <img class="myWork_img" src="Images/UnityLogo.png" />
+        <!--<img class="myWork_img" src="Images/UnityLogo.png" />-->
+        <div id="UnityObject"></div>
+
     </div>
     <div class="section cs" id="cs">
         <h2>
@@ -40,7 +43,7 @@
     </div>
     <div class="projects">
         <h2>Projects</h2>
-        <section class="project" id="char-poser">
+        <section class="project" data-aos="fade-left" id="char-poser">
             <div class="pj-text left">
                 <h3>Character Poser</h3>
                 <p>One of the first projects I made while learning Unity. It's a tool to create reference poses for artist. It's open source and available on Github and Itch.io</p>
@@ -50,7 +53,7 @@
                 <a href="https://tom-fraz.itch.io/character-poser" class="fa-brands fa-itch-io" target="_blank"></a>
             </div>
         </section>
-        <section class="project" id="tilenet">
+        <section class="project" data-aos="fade-right" id="tilenet">
             <div class="pj-text right">
                 <h3>Tilenet</h3>
                 <p>A free to play Android game inspired by Tetris where the player has to connect tiles to score points.</p>
@@ -59,7 +62,7 @@
                 <a href="https://play.google.com/store/apps/details?id=com.TomFraz.TileNet" class="fa-brands fa-google-play" target="_blank"></a>
             </div>
         </section>
-        <section class="project" id="enofrigo">
+        <section class="project" data-aos="fade-left" id="enofrigo">
             <div class="pj-text left">
                 <h3>Enofrigo configurator</h3>
                 <p>A 3D fridges configurator for Enofrigo, an italian company that produces refrigerated wine cabinets.</p>
@@ -74,5 +77,122 @@
     </div>
     <script src="topBg.js"></script>
 
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "/node_modules/three/build/three.module.js",
+                "loader": "/node_modules/three/examples/jsm/loaders/GLTFLoader.js"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { GLTFLoader } from 'loader';
+
+        const scene = new THREE.Scene();
+        const unityParent = document.getElementById("UnityObject");
+        let canvas, renderer;
+
+        const loader = new GLTFLoader();
+
+        let unityModel;
+
+        var mouseX = 0, mouseY = 0;
+
+        document.addEventListener('mousemove', handleMouseMove);
+
+        init();
+        animate();
+
+
+        function handleMouseMove(event) {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+            var rect = unityParent.getBoundingClientRect();
+            var centerX = (rect.left + (rect.right - rect.left) / 2);
+            var centerY = (rect.top + (rect.bottom - rect.top) / 2);
+            if (unityModel != undefined) {
+                unityModel.lookAt(mouseX - centerX, centerY - mouseY, 1000);
+            }
+        }
+
+        function init() {
+            canvas = document.getElementById('threeCanvas');
+            const cubeTest = new THREE.BoxGeometry(1, 1, 1);
+            scene.userData.element = unityParent;
+            const material = new THREE.MeshStandardMaterial({
+                color: new THREE.Color().setHSL(Math.random(), 1, 0.75),
+                roughness: 0.5,
+                metalness: 0,
+                flatShading: true
+            });
+            const camera = new THREE.PerspectiveCamera(50, 1, 1, 100);
+            camera.position.z = 11;
+
+            loader.load('Models/Unity.glb', function (gltf) {
+                unityModel = gltf.scene;
+                unityModel.frustumCulled = false;
+                console.log(unityModel === undefined);
+                scene.add(unityModel);
+            }, undefined, function (error) {
+
+                console.error(error);
+            });
+
+
+            scene.userData.camera = camera;
+            //scene.add(new THREE.Mesh(cubeTest, material));
+            scene.add(new THREE.HemisphereLight(0xaaaaaa, 0x444444, 2));
+
+            renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+            renderer.setClearColor(0x000000, 0);
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            console.log(unityModel === undefined);
+        }
+
+        function updateSize() {
+
+            const width = canvas.clientWidth;
+            const height = canvas.clientHeight;
+
+            if (canvas.width !== width || canvas.height !== height) {
+
+                renderer.setSize(width, height, false);
+            }
+        }
+
+        function animate() {
+
+
+
+            render();
+            requestAnimationFrame(animate);
+        }
+
+        function render() {
+            updateSize();
+
+
+            const element = scene.userData.element;
+            const rect = element.getBoundingClientRect();
+
+            const width = rect.right - rect.left;
+            const height = rect.bottom - rect.top;
+            const left = rect.left;
+            const bottom = renderer.domElement.clientHeight - rect.bottom;
+
+            renderer.setViewport(left, bottom, width, height);
+            renderer.setScissor(left, bottom, width, height);
+
+            const camera = scene.userData.camera;
+            renderer.render(scene, camera);
+        }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

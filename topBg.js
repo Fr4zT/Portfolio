@@ -18,7 +18,9 @@ resize();
 step();
 
 window.onresize = resize;
-document.onmousemove = handleMouseMove;
+
+document.addEventListener('mousemove', handleMouseMove);
+
 
 function map(value,in_min, in_max, out_min, out_max) {
     return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
@@ -34,6 +36,9 @@ function setup() {
 }
 
 function addLayers() {
+    //918ca9
+    //86819d
+
     addLayer(80, 90, '#2d2b4d');
     addLayer(70, 80, '#593863');
     addLayer(60, 70, '#b94e6d');
@@ -93,7 +98,6 @@ function update()
     {
         block.progress += block.speed;
         block.currentHeight = map(Math.sin(block.progress), 0.0, 1.0, block.minY, block.maxY);
-
     })
 }
 

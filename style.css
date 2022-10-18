@@ -13,17 +13,30 @@ body {
     height: 200px;
 }
 
+.path
+{
+    /*stroke-dasharray: 10;*/
+}
+
 .hero {
 /*    height: 20em;
 */    /*background-color: #0c1c30;*/
     background-size: cover;
+    
 }
+
+    .hero #myName {
+        /*padding:13px;*/
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        width:50%;
+    }
 
     .hero h1, .hero h2 {
         color: #fbae3c;
         position: relative;
         text-align: center;
-        margin: 0px;
     }
 
     .hero h1 {

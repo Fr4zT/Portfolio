@@ -8,6 +8,14 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./node_modules/three/build/three.module.js",
+                "loader": "./node_modules/three/examples/jsm/loaders/GLTFLoader.js"
+            }
+        }
+    </script>
     <canvas id="threeCanvas"></canvas>
     <canvas id="topBg">
     </canvas>
@@ -35,11 +43,11 @@
         <h2>
             In addition to unity I also use others C# platforms and frameworks such as Windows Form, Xamarin and .NET MAUI
         </h2>
-        <img class="myWork_img" src="Images/csLogo.png" />
+        <img alt="CsharpLogo" class="myWork_img" src="Images/csLogo.png" />
     </div>
     <div class="section vr" id="vr">
         <h2>Using Unity I can make Virtual, Augmented and Extended reality experiences for various devices</h2>
-        <img class="myWork_img" src="Images/placeholder.webp" />
+        <!-- <img class="myWork_img" src="Images/placeholder.webp" /> -->
     </div>
     <div class="projects">
         <h2>Projects</h2>
@@ -49,8 +57,8 @@
                 <p>One of the first projects I made while learning Unity. It's a tool to create reference poses for artist. It's open source and available on Github and Itch.io</p>
             </div>
             <div class="GetButtonArea">
-                <a href="https://github.com/Fr4zT/Character_Poser" class="fa-brands fa-github" target="_blank"></a>
-                <a href="https://tom-fraz.itch.io/character-poser" class="fa-brands fa-itch-io" target="_blank"></a>
+                <a href="https://github.com/Fr4zT/Character_Poser" class="fa-brands fa-github" target="_blank" rel="noopener noreferrer"></a>
+                <a href="https://tom-fraz.itch.io/character-poser" class="fa-brands fa-itch-io" target="_blank" rel="noopener noreferrer"></a>
             </div>
         </section>
         <section class="project" data-aos="fade-right" id="tilenet">
@@ -59,7 +67,7 @@
                 <p>A free to play Android game inspired by Tetris where the player has to connect tiles to score points.</p>
             </div>
             <div class="GetButtonArea">
-                <a href="https://play.google.com/store/apps/details?id=com.TomFraz.TileNet" class="fa-brands fa-google-play" target="_blank"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.TomFraz.TileNet" class="fa-brands fa-google-play" target="_blank" rel="noopener noreferrer"></a>
             </div>
         </section>
         <section class="project" data-aos="fade-left" id="enofrigo">
@@ -72,19 +80,12 @@
     <div class="contacts">
         <h2>Contact me</h2>
         <p><a id="email" href="mailto:frazzano.01t@gmail.com">frazzano.01t@gmail.com</a></p>
-        <a href="https://www.linkedin.com/in/tommaso-frazzano/" class="fa-brands fa-linkedin-in" target="_blank"></a>
-        <a href="https://www.instagram.com/3_fraz_d/" class="fa-brands fa-instagram" target="_blank"></a>
+        <a href="https://www.linkedin.com/in/tommaso-frazzano/" class="fa-brands fa-linkedin-in" target="_blank" rel="noopener noreferrer"></a>
+        <a href="https://www.instagram.com/3_fraz_d/" class="fa-brands fa-instagram" target="_blank" rel="noopener noreferrer"></a>
     </div>
     <script src="topBg.js"></script>
 
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "./node_modules/three/build/three.module.js",
-                "loader": "./node_modules/three/examples/jsm/loaders/GLTFLoader.js"
-            }
-        }
-    </script>
+
 
     <script type="module">
         import * as THREE from 'three';

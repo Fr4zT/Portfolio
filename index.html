@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="utf-8">
     <title>Tommaso Frazzano</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
     <script type="importmap">
         {
-            "imports": {
-                "three": "./node_modules/three/build/three.module.js",
-                "loader": "./node_modules/three/examples/jsm/loaders/GLTFLoader.js"
-            }
+          "imports": {
+            "three" : "https://cdn.jsdelivr.net/npm/three@0.145.0/build/three.module.js",
+            "loader": "https://cdn.jsdelivr.net/npm/three@0.145.0/examples/jsm/loaders/GLTFLoader.js"
+          }
         }
     </script>
+
+
     <canvas id="threeCanvas"></canvas>
     <canvas id="topBg">
     </canvas>
@@ -24,70 +29,94 @@
         <br />
         <h2>Software developer</h2>
     </div>
-    <div class="inBetween">
-    </div>
     <div class="about">
         <h3>About</h3>
         <br />
-        <p>I'm a software developer based in Italy. I've always been passionate about computers and programming.<br> In 2022 I completed a two-year course on virtual and augmented reality.<br> The development environment I mainly use is Unity.</p>
+        <p>I'm a software developer based in Italy. I've always been passionate about computers and programming.<br> In
+            2022 I completed a two-year course on virtual and augmented reality.<br> The development environment I
+            mainly use is Unity.</p>
     </div>
     <div class="section unity" id="unity">
         <h2>
-            I mainly use the Unity engine to make softwares like 3D configurators, educational games and mobile applications
+            I mainly use the Unity engine to make softwares like 3D configurators, educational games and mobile
+            applications
         </h2>
         <!--<img class="myWork_img" src="Images/UnityLogo.png" />-->
-        <div id="UnityObject"></div>
+        <div class="work_content" id="UnityObject"></div>
 
     </div>
     <div class="section cs" id="cs">
         <h2>
-            In addition to unity I also use others C# platforms and frameworks such as Windows Form, Xamarin and .NET MAUI
+            In addition to unity I also use others C# platforms and frameworks such as Windows Form, Xamarin and .NET
+            MAUI
         </h2>
-        <img alt="CsharpLogo" class="myWork_img" src="Images/csLogo.png" />
+        <img alt="CsharpLogo" class="myWork_img work_content" src="Images/csLogo.png" />
     </div>
     <div class="section vr" id="vr">
-        <h2>Using Unity I can make Virtual, Augmented and Extended reality experiences for various devices</h2>
-        <!-- <img class="myWork_img" src="Images/placeholder.webp" /> -->
+        <h2>Using Unity I can make Virtual, Augmented and Mixed reality experiences for various devices</h2>
+        <img class="myWork_img work_content" src="Images/arvrmr.gif" />
     </div>
     <div class="projects">
         <h2>Projects</h2>
         <section class="project" data-aos="fade-left" id="char-poser">
             <div class="pj-text left">
                 <h3>Character Poser</h3>
-                <p>One of the first projects I made while learning Unity. It's a tool to create reference poses for artist. It's open source and available on Github and Itch.io</p>
+                <p>One of the first projects I made while learning Unity. It's a tool to create reference poses for
+                    artist. It's open source and available on Github and Itch.io</p>
             </div>
             <div class="GetButtonArea">
-                <a href="https://github.com/Fr4zT/Character_Poser" class="fa-brands fa-github" target="_blank" rel="noopener noreferrer"></a>
-                <a href="https://tom-fraz.itch.io/character-poser" class="fa-brands fa-itch-io" target="_blank" rel="noopener noreferrer"></a>
+                <a href="https://github.com/Fr4zT/Character_Poser" class="fa-brands fa-github" target="_blank"
+                    rel="noopener noreferrer"></a>
+                <a href="https://tom-fraz.itch.io/character-poser" class="fa-brands fa-itch-io" target="_blank"
+                    rel="noopener noreferrer"></a>
             </div>
         </section>
         <section class="project" data-aos="fade-right" id="tilenet">
             <div class="pj-text right">
                 <h3>Tilenet</h3>
-                <p>A free to play Android game inspired by Tetris where the player has to connect tiles to score points.</p>
+                <p>A free to play Android game inspired by Tetris where the player has to connect tiles to score points.
+                </p>
             </div>
             <div class="GetButtonArea">
-                <a href="https://play.google.com/store/apps/details?id=com.TomFraz.TileNet" class="fa-brands fa-google-play" target="_blank" rel="noopener noreferrer"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.TomFraz.TileNet"
+                    class="fa-brands fa-google-play" target="_blank" rel="noopener noreferrer"></a>
             </div>
         </section>
-        <section class="project" data-aos="fade-left" id="enofrigo">
+
+        
+        <script type="module" src="https://cdn.jsdelivr.net/gh/Fr4zT/ThreeJs_Endless_Tiles@noGUI/script.min.js"></script>
+
+        <section class="project" data-aos="fade-left" id="threejs">
+            <canvas id="threeEndlessTilesCanvas"></canvas>
+            <div class="pj-text left">
+                <h3>ThreeJs</h3>
+                <p>I started learning javascript and the three.js library to make 3D content on the web.</p>
+            </div>
+            <div class="GetButtonArea">
+                <a href="https://github.com/Fr4zT/Fr4zT_ThreeJs_Projects"
+                    class="fa-brands fa-github" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+        </section>
+
+        <!-- <section class="project" data-aos="fade-left" id="enofrigo">
             <div class="pj-text left">
                 <h3>Enofrigo configurator</h3>
                 <p>A 3D fridges configurator for Enofrigo, an italian company that produces refrigerated wine cabinets.</p>
             </div>
-        </section>
+        </section> -->
     </div>
     <div class="contacts">
         <h2>Contact me</h2>
         <p><a id="email" href="mailto:frazzano.01t@gmail.com">frazzano.01t@gmail.com</a></p>
-        <a href="https://www.linkedin.com/in/tommaso-frazzano/" class="fa-brands fa-linkedin-in" target="_blank" rel="noopener noreferrer"></a>
-        <a href="https://www.instagram.com/3_fraz_d/" class="fa-brands fa-instagram" target="_blank" rel="noopener noreferrer"></a>
+        <a href="https://www.linkedin.com/in/tommaso-frazzano/" class="fa-brands fa-linkedin-in" target="_blank"
+            rel="noopener noreferrer"></a>
+        <a href="https://www.instagram.com/3_fraz_d/" class="fa-brands fa-instagram" target="_blank"
+            rel="noopener noreferrer"></a>
     </div>
     <script src="topBg.js"></script>
 
-
-
     <script type="module">
+       
         import * as THREE from 'three';
         import { GLTFLoader } from 'loader';
 
@@ -134,7 +163,6 @@
             loader.load('Models/Unity.glb', function (gltf) {
                 unityModel = gltf.scene;
                 unityModel.frustumCulled = false;
-                console.log(unityModel === undefined);
                 scene.add(unityModel);
             }, undefined, function (error) {
 
@@ -149,8 +177,6 @@
             renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
             renderer.setClearColor(0x000000, 0);
             renderer.setPixelRatio(window.devicePixelRatio);
-
-            console.log(unityModel === undefined);
         }
 
         function updateSize() {
@@ -196,4 +222,5 @@
         AOS.init();
     </script>
 </body>
+
 </html>

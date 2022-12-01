@@ -6,6 +6,7 @@ body {
     background-color: #0c1c30;
     font-family: 'Source Code Pro', monospace;
     margin: 0px;
+    overflow-x: hidden;
 }
 
 #topBg {
@@ -47,14 +48,8 @@ body {
         font-size: 3em;
     }
 
-.inBetween {
-    background-image: url("./Images/middle.svg");
-    height: 150px;
-}
-
 .about {
-    height: 300px;
-    background-color: #08121f;
+    margin: 100px 0px 100px 0px;
 }
 
     .about h3, .about p {
@@ -199,6 +194,16 @@ body {
     background-position: 50% 50%;
 }
 
+#threeEndlessTilesCanvas{
+    height: 100% !important;
+    width: 100% !important;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: fixed;
+}
+
 .contacts {
     height: 200px;
     padding: 30px 0px 100px 0px;
@@ -211,8 +216,8 @@ body {
         font-size: 2.3em;
     }
 
-    .contacts a {
-        color: #8a416e;
+    a {
+        color: #fbae3c;
     }
 
 #email {
@@ -246,6 +251,10 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 0.4;
+    }
+
+    .work_content{
+        display: none;
     }
 
     .section:hover img {

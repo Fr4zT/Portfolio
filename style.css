@@ -184,6 +184,13 @@ body {
     bottom: 20px;
 }
 
+#grapher {
+    background-image: url("./Images/Grapher.png");
+    background-attachment: fixed;
+    background-position-y: center;
+    background-size: 100% auto;
+}
+
 #char-poser {
     background-image: url("https://img.itch.zone/aW1hZ2UvMTMyOTI4OC83NzMwMjgzLnBuZw==/original/humnLU.png");
     background-position: 50% 50%;

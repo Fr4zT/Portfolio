@@ -194,6 +194,21 @@ body {
     background-position: 50% 50%;
 }
 
+#kenshi {
+    background-image: url("./Images/Kenshi.jpg");
+    background-attachment: fixed;
+    background-position-y: center;
+    background-size: 100% auto;
+}
+
+
+#labyrinth {
+    background-image: url("./Images/labyrinth.png");
+    background-attachment: fixed;
+    background-position-y: top;
+    background-size: 100% auto;
+}
+
 #threeEndlessTilesCanvas{
     height: 100% !important;
     width: 100% !important;

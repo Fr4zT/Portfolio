@@ -266,6 +266,11 @@ body {
         text-align: center;
         font-size: 5vw;
         max-width: 100%;
+        margin: 0 10px 0 10px;
+    }
+
+    .project{
+        height: 450px;
     }
 
     .myWork_img {
@@ -281,5 +286,11 @@ body {
 
     .section:hover img {
         height: 6em;
+    }
+
+    #grapher, #kenshi, #labyrinth
+    {
+        background-size: auto 100%;
+        background-position: center;
     }
 }
